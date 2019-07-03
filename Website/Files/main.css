@@ -1,0 +1,11 @@
+.topbar {
+	background:rgba(152,205,103,1.00);
+	width:auto;
+	height: 30px;
+}
+
+.bottombar {
+	background:rgba(196,154,108,1.00);
+	width:auto;
+	height: 30px;
+}

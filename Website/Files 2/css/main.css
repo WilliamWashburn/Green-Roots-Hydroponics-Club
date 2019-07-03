@@ -1,0 +1,81 @@
+.navbar{ background:#fff}
+.nav-link , .navbar-brand{ color: #f4f4f4; cursor: pointer;}
+.nav-link{ margin-right: 1em !important;}
+.nav-link:hover{ background: #f4f4f4; color: #f97300; }
+.navbar-collapse{ justify-content: flex-end;}
+.navbar-toggler{  background:#fff !important;}
+
+.topbar {
+	background:rgba(152,205,103,1.00);
+	width:auto;
+	height: 30px;
+}
+
+.bottombar {
+	background:rgba(196,154,108,1.00);
+	width:auto;
+	height: 30px;
+		
+}
+
+.breadcumb-area {
+	background-image: url("../assets/floatRaft.jpg");
+    position: relative;
+    z-index: 10;
+    background-size: cover;
+	background-position: center center;
+	height:500px;
+}
+
+
+.overlay {
+	background-color: rgba(18,29,8,0.6);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.description {
+    position: absolute;
+    top: 30%;
+    margin: auto;
+    padding: 2em;
+    width: 505px;
+}
+
+.description h1 {
+	color: rgba(196,154,108,1.00);
+}
+
+.description p {
+	color:#FFF;
+	font-size: 20px;
+	width: 50%;
+	line-height: 1.5;
+}
+
+.description button {
+	border: 4px solid rgba(196,154,108,1.00);
+	background: rgba(196,154,108,1.00);
+	color:#fff;
+}
+
+hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+
+.button {
+	border: 0px solid rgba(0,0,0,1.00);
+	border-radius: 5px;
+	background: rgba(196,154,108,1.00);
+	color:rgba(0,0,0,1.00);
+	margin-bottom: 20px;
+}

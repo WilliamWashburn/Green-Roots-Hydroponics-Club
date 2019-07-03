@@ -1,0 +1,51 @@
+#https://mysqlclient.readthedocs.io/user_guide.html#connection-objects
+#https://mariadb.com/resources/blog/how-to-connect-python-programs-to-mariadb/
+#https://pythonhosted.org/pyserial/shortintro.html#readline
+
+import time
+import sys
+import serial
+import MySQLdb as mariadb
+
+#this connects to the serial port
+ser = serial.Serial('/dev/ttyACM0', 115200, timeout=0)
+if not ser.is_open:
+	print "error connecting to serial port"
+
+#this connects to the database
+con = mariadb.connect(host='localhost',user='william',passwd='greenroots',db='greenrootsdb');
+cursor = con.cursor()
+
+try:
+	while 1:
+		serData = ser.readline(12) #the readline parameter is the number of bytes read
+		print serData
+		
+		if len(serData) > 3: #this makes sure what youre putting into the database is what you want
+			
+			nodedata = serData.split(':',2)
+			
+			weight = nodedata[0]
+			weight = float(weight)
+			temperature = nodedata[1]
+			temperature = float(temperature)
+			
+			datime = 11.0
+			datime = float(datime)
+			
+			insert_stmt = (
+				"INSERT INTO RoomSetup (Datetime, Temperature, Weight)"
+				"VALUES (%s, %s, %s)"
+			)
+			data = (datime, temperature, weight)
+			print data
+			
+			cursor.execute(insert_stmt,data)
+			con.commit()	
+		
+		time.sleep ( 1 );
+
+except KeyboardInterrupt:
+	con.close()
+	ser.close()
+
